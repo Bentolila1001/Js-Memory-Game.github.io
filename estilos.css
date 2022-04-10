@@ -1,0 +1,129 @@
+body {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(325deg, #6f00fc 0%, #fc7900 50%, #fcc700 100%);
+    overflow: hidden;
+}
+
+.disabled {
+    color: #757575;
+}
+
+button {
+    background: #282A3A;
+    color: #FFF;
+    border-radius: 5px;
+    padding: 10px 20px;
+    border: 0;
+    cursor: pointer;
+    font-family: Fredoka;
+    font-size: 18pt;
+}
+
+#tabuleiro {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#controls {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+#stats {
+    color: #FFF;
+    font-size: 1.5rem;
+}
+
+#start{
+    display: block;
+}
+#restart{
+    display: block;
+    text-align: center;
+    margin-left: 50px;
+    margin-top: 30px;
+}
+
+.board-container {
+    position: relative;
+}
+
+.board,
+.win {
+    border-radius: 5px;
+    box-shadow: 0 25px 50px rgb(33 33 33 / 25%);
+    background: linear-gradient(135deg,  #6f00fc 0%,#fc7900 50%,#fcc700 100%);
+    transition: transform .6s cubic-bezier(0.4, 0.0, 0.2, 1);
+    backface-visibility: hidden;
+}
+
+.board {
+    display: grid;
+    padding: 20px;
+    grid-template-columns: repeat(4, auto);
+    grid-gap: 20px;
+}
+
+.win {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background: #FDF8E6;
+}
+
+.win-text {
+    top: 50%;
+    left: 50%;
+    font-size: 2.5rem;
+    color: #282A3A;
+}
+
+.board .card {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    position: relative;
+}
+
+.card.is-flipped {
+    transform: rotateY(180deg);
+}
+
+.card-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+}
+
+.card:active {
+    transform: scale(0.98);
+    transition: transform 0.9s;
+}
+
+.card:hover {
+    box-shadow: 5px 10px #0603037d;
+    
+}
